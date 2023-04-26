@@ -8,29 +8,44 @@
 <body>
     <header>Round 1</header>
     <div class="game">
-        <div class="userScore">
+        <div class="scores">
+            <div class="user">
+                <div>
+                    <h2 id="userScore">You:</h2>
+                </div>
+                <div class="user-placeholder">
+                </div>
+            </div>
+            <div class="comp">             
+                <div>
+                    <h2 id="compScore">Computer:</h2>
+                </div>
+                <div class="comp-placeholder">
+                </div>
+            </div>
+        </div>
+        <div class="userPick">
+            <div>
+             <h2 id="pick">Take your pick</h2>    
+            </div>
             <div class="buttons">
                 <div id="rock">
                     <button>
-                        <img src="images/rock.png" alt="ROCK" width="200" height="300">
+                        <img src="images/rock.png" alt="ROCK" width="150" height="250">
                     </button>
                 </div>
                 <div id="paper">
                     <button>
-                        <img src="images/paper.png" alt="PAPER" width="200" height="300">
-                    </button>
-                    <h2>Take your pick</h2>
+                        <img src="images/paper.png" alt="PAPER" width="150" height="250">
+                    </button>  
                 </div>
                 <div id="scissors">
                     <button>
-                        <img src="images/scissors.png" alt="SCISSORS" width="200" height="300">
+                        <img src="images/scissors.png" alt="SCISSORS" width="150" height="250">
                     </button>
-                </div>
+                </div>          
             </div>
-        </div>
-        <div class="computerScore">
-
-        </div>
+        </div>                        
     </div>
    <script src="javaScript/script.js"></script> 
 </body>
