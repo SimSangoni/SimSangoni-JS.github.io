@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'robotoBold';
+    src: url(/font/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'robotoBI';
+    src: url(/font/Roboto-BoldItalic.ttf);
+}
+
+body {
+    background-color: rgb(39, 25, 25);
+}
+
+header {
+    font-family: 'robotoBold';
+    color: aliceblue;
+    font-size: 50px;
+    text-align: center;
+}
+
+.buttons {
+    border: none;
+    display: flex;
+    padding: 30px 30px;
+    margin-left: 250px;
+}
+
+img {
+    border: none;
+}
+
+h2 {
+    color: aliceblue;
+    font-family: 'robotoBI';
+    font-size: 30px;
+}
