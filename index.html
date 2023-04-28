@@ -6,21 +6,26 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <header>Round 1</header>
+    <header id="round">Round </header>
+    <div class="overlay" id="overlay">
+        <div class="modal" id="modal">
+          <img src="your-image-url-here" alt="Notification Image">
+        </div>
+      </div>
     <div class="game">
         <div class="scores">
             <div class="user">
                 <div>
-                    <h2 id="userScore">You:</h2>
+                    <h2 id="userScore">Player: </h2>
                 </div>
-                <div class="user-placeholder">
+                <div class="user-placeholder" id="user-placeholder">
                 </div>
             </div>
             <div class="comp">             
                 <div>
                     <h2 id="compScore">Computer:</h2>
                 </div>
-                <div class="comp-placeholder">
+                <div class="comp-placeholder" id="comp-placeholder">
                 </div>
             </div>
         </div>
@@ -31,17 +36,17 @@
             <div class="buttons">
                 <div id="rock">
                     <button>
-                        <img src="images/rock.png" alt="ROCK" width="150" height="250">
+                        <img src="images/rock.png" alt="ROCK" width="150" height="250" id="rockImage">
                     </button>
                 </div>
                 <div id="paper">
                     <button>
-                        <img src="images/paper.png" alt="PAPER" width="150" height="250">
+                        <img src="images/paper.png" alt="PAPER" width="150" height="250" id="paperImage">
                     </button>  
                 </div>
                 <div id="scissors">
                     <button>
-                        <img src="images/scissors.png" alt="SCISSORS" width="150" height="250">
+                        <img src="images/scissors.png" alt="SCISSORS" width="150" height="250" id="scissorsImage">
                     </button>
                 </div>          
             </div>
