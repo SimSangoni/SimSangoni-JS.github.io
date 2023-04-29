@@ -97,11 +97,13 @@ h2 {
     border-radius: 5px;
     text-align: center;
   }
-  
-  /* Image */
   .modal img {
     width: 500px;
     
     margin-bottom: 10px;
   }
-  
+.modal p {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 0;
+}

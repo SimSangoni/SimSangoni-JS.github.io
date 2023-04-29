@@ -18,13 +18,15 @@ let round = 0;
 
 
 // Notification for Pop Up Images
-function showNotification(imageUrl, duration) {
+function showNotification(message ,imageUrl, duration) {
   // Show overlay and modal
   const overlay = document.getElementById("overlay");
   const modal = document.getElementById("modal");
   const image = modal.querySelector("img");
+  const messageElement = modal.querySelector("p");
 
   image.src = imageUrl;
+  messageElement.textContent = message;
   overlay.style.display = "block";
   modal.style.display = "block";
   // Hide modal after duration
@@ -83,7 +85,7 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     round++;
     roundDisplay.textContent = `Round ${round}`;
-    showNotification('images/tie.png',1500)
+    showNotification('Pick again, you picked the same as the computer.','images/tie.png',2000)
   } else if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
     (playerSelection === "paper" && computerSelection === "rock") ||
@@ -102,11 +104,15 @@ function playRound(playerSelection, computerSelection) {
   if (playerScore == 5 || computerScore == 5) {
     // Stop game
     if (playerScore > computerScore) {
-      showNotification('images/win.png', 2000);
+      const winImages = ['images/winDid.png', 'images/winnerThere.jpg', 'images/bringWin.jpg'];
+      const winImage = winImages[Math.floor(Math.random() * winImages.length)];
+      showNotification( 'You win!',winImage, 3000);
       playAgain();
     }
     else if (computerScore > playerScore) {
-      showNotification('images/lose.png', 2000);
+      const loseImages = ['images/loseSir.png', 'images/lostElmo.jpg', 'images/lostRobot.jpg'];
+      const loseImage = loseImages[Math.floor(Math.random() * loseImages.length)];
+      showNotification('You lose.' ,loseImage, 3000);
       playAgain(); 
     }
   }    
