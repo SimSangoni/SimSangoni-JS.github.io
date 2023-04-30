@@ -50,7 +50,7 @@ if (playerScore == 5 || computerScore == 5) {
     playAgain();
   }
   else if (computerScore > playerScore) {
-    const loseImages = ['images/loseSir.png', 'images/lostElmo.jpg', 'images/lostRobot.jpg'];
+    const loseImages = ['images/loseSir.jpeg', 'images/lostElmo.jpg', 'images/lostRobot.jpg'];
     const loseImage = loseImages[Math.floor(Math.random() * loseImages.length)];
     showNotification('You lose.' ,loseImage, 3000);
     playAgain(); 
