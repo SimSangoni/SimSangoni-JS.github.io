@@ -3,39 +3,31 @@ const compScoreDisplay = document.getElementById('compScore')
 const roundDisplay = document.getElementById('round')
 const userPlaceholder = document.getElementById('user-placeholder');
 const compPlaceholder = document.getElementById('comp-placeholder');
-
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
-
 const rockImage = document.getElementById('rockImage');
 const paperImage = document.getElementById('paperImage');
 const scissorsImage = document.getElementById('scissorsImage');
-
 let playerScore = 0;
 let computerScore = 0;
 let round = 0;
-
-
 // Notification for Pop Up Images
 function showNotification(message ,imageUrl, duration) {
-  // Show overlay and modal
   const overlay = document.getElementById("overlay");
   const modal = document.getElementById("modal");
   const image = modal.querySelector("img");
   const messageElement = modal.querySelector("p");
-
   image.src = imageUrl;
   messageElement.textContent = message;
   overlay.style.display = "block";
   modal.style.display = "block";
-  // Hide modal after duration
   setTimeout(function () {
     overlay.style.display = "none";
     modal.style.display = "none";
   }, duration);
 }
-
+// Play function
 function playAgain() {
   setTimeout(() => {
     const playAgain = confirm("Do you want to play again?");
@@ -47,9 +39,24 @@ function playAgain() {
     }
   }, 2000);
 }
-
-
-
+//Stop game
+function stopGame(playerScore, computerScore){
+if (playerScore == 5 || computerScore == 5) {
+  // Stop game
+  if (playerScore > computerScore) {
+    const winImages = ['images/winDid.png', 'images/winnerThere.jpg', 'images/bringWin.jpg'];
+    const winImage = winImages[Math.floor(Math.random() * winImages.length)];
+    showNotification( 'You win!',winImage, 3000);
+    playAgain();
+  }
+  else if (computerScore > playerScore) {
+    const loseImages = ['images/loseSir.png', 'images/lostElmo.jpg', 'images/lostRobot.jpg'];
+    const loseImage = loseImages[Math.floor(Math.random() * loseImages.length)];
+    showNotification('You lose.' ,loseImage, 3000);
+    playAgain(); 
+  }
+} 
+}
 // Computer picking randomly function
 function computerPlay(){
   const choices = ["rock", "paper", "scissors"];
@@ -79,7 +86,6 @@ function computerPlay(){
   }
   return compPick
 }
-
 // Playing one round of game
 function playRound(playerSelection, computerSelection) { 
   if (playerSelection === computerSelection) {
@@ -101,24 +107,8 @@ function playRound(playerSelection, computerSelection) {
     compScoreDisplay.textContent =  `Computer: ${computerScore}`;
     roundDisplay.textContent = `Round ${round}`;  
   }
-  if (playerScore == 5 || computerScore == 5) {
-    // Stop game
-    if (playerScore > computerScore) {
-      const winImages = ['images/winDid.png', 'images/winnerThere.jpg', 'images/bringWin.jpg'];
-      const winImage = winImages[Math.floor(Math.random() * winImages.length)];
-      showNotification( 'You win!',winImage, 3000);
-      playAgain();
-    }
-    else if (computerScore > playerScore) {
-      const loseImages = ['images/loseSir.png', 'images/lostElmo.jpg', 'images/lostRobot.jpg'];
-      const loseImage = loseImages[Math.floor(Math.random() * loseImages.length)];
-      showNotification('You lose.' ,loseImage, 3000);
-      playAgain(); 
-    }
-  }    
+  stopGame(playerScore, computerScore) 
 }
-
-
 // Reset Game
 function resetGame() {
   playerScore = 0;
@@ -132,10 +122,8 @@ function resetGame() {
   userPlaceholder.removeChild(existingImage);
   compPlaceholder.removeChild(existingCompImage);
 }
-
 rock.addEventListener('click', 
 function() {
-
   const playerSelection = 'rock';
   const existingImage = userPlaceholder.querySelector('img');
   if (existingImage) {
@@ -146,10 +134,7 @@ function() {
 
   const computerSelection = computerPlay(); 
   playRound(playerSelection, computerSelection)
-  //return playerSelection;
 });
-
-
 paper.addEventListener('click', 
 function() {
   const playerSelection = 'paper';
@@ -163,23 +148,16 @@ function() {
 
   const computerSelection = computerPlay(); 
   playRound(playerSelection, computerSelection)
-  //return playerSelection;
 });
-
-
 scissors.addEventListener('click', 
 function() {
-  
   const playerSelection = 'scissors';
-
   const existingImage = userPlaceholder.querySelector('img');
   if (existingImage) {
     userPlaceholder.removeChild(existingImage);
   }
   const clonedScissors = scissorsImage.cloneNode(true);
   userPlaceholder.appendChild(clonedScissors);
-
   const computerSelection = computerPlay(); 
   playRound(playerSelection, computerSelection)
-  //return playerSelection;
 });

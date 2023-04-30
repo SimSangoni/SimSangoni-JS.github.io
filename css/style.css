@@ -2,29 +2,24 @@
     font-family: 'robotoBold';
     src: url(/font/Roboto-Bold.ttf);
 }
-
 @font-face {
     font-family: 'robotoBI';
     src: url(/font/Roboto-BoldItalic.ttf);
 }
-
 body {
     background-color: black;
 }
-
 header {
     font-family: 'robotoBold';
     color: aliceblue;
     font-size: 50px;
     text-align: center;
 }
-
 .buttons {
     display: flex;
     gap: 20px;
     padding: 30px 30px;
 }
-
 img {
     border: none;
 }
@@ -35,7 +30,6 @@ h2 {
     font-size: 30px;
     text-align: center;
 }
-
 .scores {
     display: flex;
     gap: 150px;
@@ -43,13 +37,10 @@ h2 {
     justify-content: center;
     align-items: center;
 }
-
-
 .buttons {
     justify-content: center;
     align-items: center;
 }
-
 .user-placeholder {
     width: 150px;
     height: 250px;
@@ -58,7 +49,6 @@ h2 {
     background-repeat: no-repeat;
     background-position: center;
   }
-
   .comp-placeholder {
     justify-content: center;
     align-items: center;
@@ -69,12 +59,9 @@ h2 {
     background-repeat: no-repeat;
     background-position: center;
   }
-  
   .user {
     display: inline-block;
   }
-
-  /* Overlay */
 .overlay {
     position: fixed;
     top: 0;
@@ -85,8 +72,6 @@ h2 {
     z-index: 9999;
     display: none;
   }
-  
-  /* Modal */
   .modal {
     position: absolute;
     top: 50%;
